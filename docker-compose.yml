@@ -38,6 +38,8 @@ services:
     image: nginx:alpine
     container_name: cpapp-nginx
     restart: unless-stopped
+    expose:
+      - 7002
     ports:
       - 7002:80
     volumes:
