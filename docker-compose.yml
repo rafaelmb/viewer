@@ -3,8 +3,8 @@ services:
   app:
     build:
       args:
-        user: rafael
-        uid: 197602
+        user: ${ENV_USER}
+        uid: ${ENV_UID}
       context: ./
       dockerfile: Dockerfile
     image: cpapp
@@ -39,7 +39,7 @@ services:
     container_name: cpapp-nginx
     restart: unless-stopped
     expose:
-      - 7002
+      - "7002"
     ports:
       - 7002:80
     volumes:
